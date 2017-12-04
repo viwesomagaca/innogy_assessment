@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plumbers Work schedule</title>
+
+    <script type='text/javascript' src='handlebars-v4.0.5.js'></script>
+
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="plumbers.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Jim+Nightshade|Griffy|Kaushan+Script" rel="stylesheet"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body align="center">
+
+  <div class="jumbotron">
+    <h1>Plumbers Work schedule</h1>
+
+    <h3>Book a Plumber!</h3>
+  </div>
+
+  <ul class="nav nav-tabs nav-justified">
+    <li class=""><a href="#home" data-toggle="tab" aria-expanded="true">Register a Plumber</a></li>
+    <li class="active"><a href="#bookings" data-toggle="tab" aria-expanded="false">Booking a Plumber</a></li>
+    <li class="active"><a href="#preview" data-toggle="tab" aria-expanded="true">Bookings Preview</a></li>
+  </ul>
+</div>
+  <div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade" id="home">
+      <br>
+      <div class="container">
+
+
+<h4> Register a Plumber </h4>
+
+  <label for="name">Name: <input type="text" class="plumberName"></label> <br>
+  <label for="name">Cellphone Number: <input type="text" class="cellNumber"></label> <br> <br>
+  <label for="name">Slots: <br>
+        <input type="checkbox" name="slots" id="morning" class="slot" value="Morning"> Morning
+        <input type="checkbox" name="slots" id="midday" class="slot" value="Midday"> Midday
+        <input type="checkbox" name="slots" id="afternoon" class="slot" value="Afternoon"> Afternoon
+  </label> <br> <br>
+  <label for="name">Days: <br>
+  <input type="checkbox" name="weekdays" id="monday" class="days" value="Monday" {{#if selected.Monday}}checked{{/if}} >Monday
+  <input type="checkbox" name="weekdays"id="tuesday" class="days" value="Tuesday" {{#if selected.Tuesday}}checked{{/if}} >Tuesday
+  <input type="checkbox" name="weekdays" id="wednesday" class="days" value="Wednesday" {{#if selected.Wednesday}}checked{{/if}} >Wednesday
+  <input type="checkbox" name="weekdays" id="thursday" class="days" value="Thursday" {{#if selected.Thursday}}checked{{/if}} > Thursday
+  <input type="checkbox" name="weekdays" id="friday" class="days" value="Friday" {{#if selected.Friday}}checked{{/if}} >Friday
+  <input type="checkbox" name="weekdays" id="saturday" class="days" value="Saturday" {{#if selected.Saturday}}checked{{/if}} >Saturday
+  <input type="checkbox" name="weekdays" id="sunday" class="days" value="Sunday" {{#if selected.Sunday}}checked{{/if}} > Sunday
+</label> <br>  <br>
+
+<button type="submit" name="button" id="reg">Regsiter Plumber</button>
+
+<div class="output"></div>
+
+</div>
+</div>
+
+
+  <div class="tab-pane fade" id="bookings">
+    <h1> Book a Plumber </h1>
+    <label for="username"> Username:<input type="text" name="" value=""></label>
+    <input type="button" id=find value="find me a Plumber" >
+
+<script id="plumberBook" type="text/x-handlebars-template">
+  <table class="table table-striped table-hover" width="60%">
+      <tr>
+          <th> Plumbers Name</th>
+          <th> Contact details </th>
+          <th>Daily Slots</th>
+          <th>Working Days</th>
+          <th> Book a Plumber</th>
+
+      </tr>
+      {{#each plumbs}}
+      <tr>
+          <td>{{name}}</td>
+          <td>{{cellNo}}</td>
+          <td>{{slots}}</td>
+          <td>{{days}}</td>
+
+          <td> <input type="button" id={{_id}} value="Book Me!" ></td>
+      </tr>
+      {{/each}}
+  </table>
+
+</script>
+
+  </div>
+  <div id="display" width="60%">
+   <h4> view here </h4>
+  </div>
+
+<div class="tab-pane fade" id="preview">
+  <h1> Booked Plumbers! </h1>
+</div>
+</div>
+
+
+
+
+
+<script type="text/javascript" src="plumbers.js"></script>
+</html>

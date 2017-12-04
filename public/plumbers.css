@@ -1,0 +1,31 @@
+#display{
+  background-color: pink;
+}
+
+body{
+  background-color: lavender;
+}
+
+table{
+  width: 50%
+}
+
+th, tr, td{
+    border: solid gray 2px;
+    border-collapse: collapse;
+    background-color:darkgray;
+    align-content: center;
+    font-family:"Dancing Script", cursive;
+
+}
+
+h1{
+    font-family:"Dancing Script", cursive;
+    font-size: 50px;
+}
+
+h3{
+    font-family: "Kaushan Script", cursive;
+    font-size: 20px;
+    position: relative;
+}
